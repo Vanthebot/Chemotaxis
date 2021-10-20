@@ -22,17 +22,24 @@ class Bacteria
   int myX, myY, myColor;
   Bacteria()
   {
-    myX = (int)(Math.random()*400);
-    myY = (int)(Math.random()*400);
-    myColor = color(255,0,0);
+    myX = (int)(200);
+    myY = (int)(200);
+    myColor = color(220, 250, 25);
   }
   void move()
   {
     myX = myX + (int)(Math.random()*7)-3;
-    myY = myY + (int)(Math.random()*6)-3;
+    myY = myY + (int)(Math.random()*7)-3;
+    if (myX >= 400){
+      myX = myX - (int)(Math.random()*7)-3;
+    }
+    if (myX <= 0){
+      myX = myX + (int)(Math.random()*7)-3;
+    }
   }
   void show()
   {
-   ellipse(myX, myY, 5, 5);
+    fill(myColor);
+   ellipse(myX, myY, 6, 5);
   }
 }
