@@ -1,4 +1,4 @@
- Bacteria [] bobs = new Bacteria [10];
+Bacteria [] bobs = new Bacteria [10];
  void setup ()
   {
     size (400,400);
@@ -28,13 +28,19 @@ class Bacteria
   }
   void move()
   {
-    myX = myX + (int)(Math.random()*7)-3;
-    myY = myY + (int)(Math.random()*7)-3;
-    if (myX >= 400){
-      myX = myX - (int)(Math.random()*7)-3;
+    myX = myX + (int)(Math.random()*9)-4;
+    myY = myY + (int)(Math.random()*9)-4;
+    while (myX >= 390){
+      myX = myX - (int)(Math.random()*9)-4;
     }
-    if (myX <= 0){
-      myX = myX + (int)(Math.random()*7)-3;
+    while (myX <= 0){
+      myX = myX + (int)(Math.random()*9)-4;
+    }
+    while (myY >= 390){
+      myY = myY - (int)(Math.random()*9)-4;
+    }
+    while (myY <= 0){
+      myY = myY + (int)(Math.random()*9)-4;
     }
   }
   void show()
